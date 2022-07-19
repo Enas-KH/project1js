@@ -6,14 +6,14 @@
  }
  body
  {
-    background-color: rgb(102,205,170);
+    background-color: rgb(202, 249, 233);
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
     font-family: sans-serif;
  }
  .menu-bar{
-    background: rgb(30, 92, 71);
+   background: rgb(162, 203, 190);
     text-align: center;
  }
 

@@ -1,57 +1,69 @@
 let Books= [
 {
-    title: "book1",
+    title: "A special place for women",
     author: "laura hankin",
     edition: 1,
-    image: "img/book1"
-
+    image: "https://images-na.ssl-images-amazon.com/images/I/71ksbx-cXGL.jpg"
+    
+    
 },
 {
-    title: "book2",
+    title: "Holdout",
     author: "jefferey kluger",
     edition: 1,
-    image: "img/book2"
+    image: "https://images-na.ssl-images-amazon.com/images/I/91EsW7FeDCL.jpg"
+    
 },
 {
-    title: "book3",
+    title: "Woman of light",
     author: "kali fajardo",
     edition: 3,
-    image: "img/book3"
+    image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639027745l/58587145.jpg"
+    
 },
 {
-    title: "book4",
+    title: "Oh william",
     author: "newyork times",
     edition: 4,
-    image: "img/book4"
+    image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617988577l/56294820.jpg"
 },
 {
-    title: "book5",
+    title: "Women talking",
     author: "mariam towes",
     edition: 6,
-    image: "img/book5"
+    image: "https://images-na.ssl-images-amazon.com/images/I/81VDB+MTX+L.jpg"
 },
 {
-    title: "book6",
+    title: "Edge case",
     author: "yz  chin",
     edition: 3,
-    image: "img/book6"
+    image: "https://images-na.ssl-images-amazon.com/images/I/71DBo02Bn+L.jpg"
 }
 ];
-function display()
+function display(obj)
 {
-  var arrayLength = Books.length;
-var temp;
-  for (i = 0; i < arrayLength; i++) {
-    temp = document.createElement('div');
-    temp.className = 'results';
-    temp.innerHTML = Books[i].title;
-    let  x =document.getElementsByClassName('results')[0];
+    let temp = document.createElement('div');
+    let titleCell=document.createElement('h4');
+    let authorCell=document.createElement('h6');
+    let imageCell=document.createElement('img');
+    imageCell.src=obj.image;
+    titleCell.innerText=obj.title;
+    authorCell.innerText=obj.author;
+    imageCell.setAttribute("class","image");
+    titleCell.setAttribute("class","title");
+    authorCell.setAttribute("class","author");
+    temp.appendChild(imageCell);
+    temp.appendChild(titleCell);
+    temp.appendChild(authorCell);
+    document.getElementsByClassName("results")[0].appendChild(temp);  
+    
+
+    /*let  x =document.getElementsByClassName('results')[0];
     x.appendChild(temp);
-    console.log(x);
-   
-  }
+    console.log(x);*/ 
+  
 }
-display();
+Books.map((obj)=>{display(obj)});
    /* let BooksTable = document.createElement("table")
     let BooksTableHead = document.createElement("thead")
     let BooksTableHeadRow = document.createElement("tr")
