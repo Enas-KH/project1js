@@ -15,52 +15,71 @@
  .menu-bar {
    background: rgb(162, 203, 190);
    text-align: center;
+   overflow: hidden;
  }
 
- .menu-bar ul {
-   display: inline-flex;
-   color: aliceblue;
-   list-style: none;
+ .menu-bar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
  }
 
- .menu-bar ul li {
-   width: 120px;
-   margin: 15px;
-   padding: 15px;
+ .menu-bar a:hover {
+   background-color: #ddd;
+   color: black;
  }
 
- .menu-bar ul li a {
-   text-decoration: none;
-   color: #fff;
+ .menu-bar a.active {
+  background-color: #427562;
+  color: white;
  }
+ .menu-bar h1 {
+  color: rgb(47, 47, 58);
+  font-family: verdana;
+  font-size: 300%;
+}
+.button {
+  padding: 5px 5px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #87b3a3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 50px;
+  height: 30px;  
+  
+}
 
- .buttons {
-   border: none;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   border-radius: 50%;
+.button:hover {background-color: #4e5d4e}
 
- }
-
- .buttons:hover {
-   box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
- }
+.button:active {
+  background-color: #728d73;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
  .results {
   max-width: 100%;
-  position: relative;
-  margin: auto;
   display: flex;
+  text-align:center;
+  margin-left: 3%;
+  margin-top: 6%;
+  
+  
  }
 
 
  .image {
    margin: 30px;
    width: 200px;
-   height: 200px;
+   height: 300px;
    border-radius: 8px;
    border: 1px solid #ddd;
    border-radius: 4px;
@@ -72,6 +91,7 @@
 
  .title {
    margin: 20px;
+   text-decoration-line: underline
 
  }
 
@@ -149,4 +169,11 @@
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+.favs{
+  max-width: 100%;
+  display: flex;
+  text-align:center;
+  margin-left: 3%;
+  margin-top: 6%;
 }
