@@ -3,14 +3,18 @@
 <head>
     <title>Read Me</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo&family=B612&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 </head>
 <body>
     <div class="menu-bar">
-        <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="html/fav.html">Favourits</a></li>
-        </ul>
+
+            <a class="active" href="/index.html">Home</a>
+            <a href="/html/fav.html">Favourits</a></li>
+        
     </div>
     <div class="buttons">
     </div>
@@ -30,12 +34,12 @@
           <label for="Edition"><b></b></label>
           <input type="number" placeholder="Edition" name="Edition" required>
           <label for="image"><b></b></label>
-          <input type="file" placeholder="choose image" name="image" required>
-          <button type="submit" class="btn">add</button>
+          <input type="text" placeholder="link" name="link" required>
+          <button type="submit" id="newBook" class="btn">add</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>
-    <script src="js/script.js"></script> 
+    <script src="./js/script.js"></script> 
 </body>
 
 </html>
