@@ -47,7 +47,6 @@ let Books = [
 
 let fav = [];
 const ss = document.getElementsByClassName("favs")[0];
-
 const display= (obj , arrayname) => {
     let temp = document.createElement('div');
     let titleCell = document.createElement('h4');
@@ -85,11 +84,14 @@ const display= (obj , arrayname) => {
     }
 };
 
+//renderBooks("Books");
+
 let addtofavourites= obj => { //arrow function
     fav = JSON.parse(localStorage.getItem("fav")) || [];
     fav.push(obj);
     localStorage.setItem("fav", JSON.stringify(fav));
 }
+
 let removefromfvourites=obj=> {                      
     console.log(obj.id) //console.log(el.id)
     fav = JSON.parse(localStorage.getItem('fav')) || [];
@@ -97,12 +99,40 @@ let removefromfvourites=obj=> {
     localStorage.setItem("fav", JSON.stringify(fav));
     ss.innerHTML = "";
     render(fav, "fav");
+
 }
+
 let render=(array, arrayname)=> {
     array.map((obj) => { display(obj,arrayname) });
 }
+render(Books, "Books"); 
 
-render(Books, "Books");
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+document.getElementById('newBook').addEventListener('click', e => {
+   e.preventDefault();
+    AddNewBook(e);
+})
+
+function AddNewBook({target: {parentNode}}) {
+    const title = parentNode[0].value;
+    const author = parentNode[1].value;
+    const edition = parentNode[2].value;
+    const image = parentNode[3].value;
+    const id = Books.length;
+    const path = "img/"
+    image=path.concat(JSON.stringify(image).slice(10,-10))
+    const newBook = { id, title, author, edition, image };
+    closeForm();
+    Books.push(newBook);
+    document.getElementById("Books").innerHTML = "";
+    renderBooks("Books");
+}
 
 
 
