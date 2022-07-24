@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Read Me</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body>
     <div class="menu-bar">
         <ul>
             <li><a href="/index.html">Home</a></li>
-            <li><a href="/fav.html">Favourits</a></li>
+            <li><a href="html/fav.html">Favourits</a></li>
         </ul>
     </div>
     <div class="buttons">
-        <a href="/form.html">
-            Add new book
-        </a>
     </div>
     <div class="results">
-    <div class="temps">
-        <!--render all books -->
+    <div class="temps">    <!--render all books -->
     </div>
-   
-    <script src="script.js"></script>
-    <script src="books.js"></script>
+    <button class="open-button" onclick="openForm()">Open Form</button>
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+          <h1>Add new book</h1>
+      
+          <label for="title"><b><title></title></b></label>
+          <input type="text" placeholder="Enter title" name="title" required>
+      
+          <label for="author"><b>author</b></label>
+          <input type="text" placeholder="author" name="author" required>
+          <label for="Edition"><b></b></label>
+          <input type="number" placeholder="Edition" name="Edition" required>
+          <label for="image"><b></b></label>
+          <input type="file" placeholder="choose image" name="image" required>
+          <button type="submit" class="btn">add</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+    <script src="js/script.js"></script> 
 </body>
 
 </html>
